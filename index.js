@@ -38,14 +38,14 @@ getDataRenderTable() //get operation
         fullName: $('#fullName').val(),
         bookName:$('#bookName').val(),
       }).then(getDataRenderTable)
-    })
+    }) //post data then get data from api
 
 
   function deleteUser(id) {
     $.ajax(`${URL_ENDPOINT}/${id}`, {
     type: 'DELETE',
       }).then(getDataRenderTable)
-    }
+    } //delete data
 
 
     function updateUser() {
@@ -60,6 +60,6 @@ getDataRenderTable() //get operation
       })
     }
     
-    $('#updateInfo').click(updateUser)
+    $('#updateInfo').click(updateUser) //update data
 
   
