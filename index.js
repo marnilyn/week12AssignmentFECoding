@@ -9,10 +9,10 @@
   // Use Bootstrap and CSS to style your project.
 
 
-const URL_ENDPOINT = 'https://64f15eda0e1e60602d23b9f2.mockapi.io/week12AssignmentFECoding_API/books'
+const URL_ENDPOINT = 'https://64f15eda0e1e60602d23b9f2.mockapi.io/week12AssignmentFECoding_API/books' //url from mockapi
 
 function getDataRenderTable() {
-  $.get(URL_ENDPOINT).then(data => {
+  $.get(URL_ENDPOINT).then(data => { 
     $('tbody').empty()
     data.map(person => {
       $('tbody').append(
@@ -29,7 +29,7 @@ function getDataRenderTable() {
   })
 }
 
-getDataRenderTable()
+getDataRenderTable() //get operation
 
  
   $('#myBtn').click(function (e) {
