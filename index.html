@@ -4,28 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-grid.css" >
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" >
 </head>
-<body>
+<body class="container">
 
-    <h1>Books Check Out List</h1>
+    <h1>Favorite Books List</h1>
 
-    <form>
+    <form class="jumbotron">
         <div>
             <label for="fullName">Full Name</label>
-            <input id="full-Name" placeholder="Full Name">
+            <input id="fullName" placeholder="Full Name">
         </div>
         <br>
         <div>
             <label for="bookName">Book Name</label>
-            <input id="book-Name" placeholder="Book Name"><br>
-            <br>
-            <button id="myBtn" class="btn btn-secondary">Submit</button>
+            <input id="bookName" placeholder="Book Name">
         </div>
+        <br>
+        <br>
+        <button id="myBtn" class="btn btn-primary">Submit</button>
     </form>
+
+    </div>
+        
+    <form>
+        <h4>Update Information</h4>
+        <div>
+          <label for="updateId">ID</label>
+          <input id="updateId">
+        </div>
+        <div>
+          <label for="updateName">Full Name</label>
+          <input id="updateName">
+        </div>
+        <div>
+          <label for="updateBook">Book Name</label>
+          <input id="updateBook">
+        </div>
+        <button id="updateInfo">Update</button>
+    </form>
+
+
     <br><br>
-    <table class="container">
-        <thead>
+    <table class="container table">
+        <thead class="thead-dark">
             <th>ID:</th>
             <th>Full Name:</th>
             <th>Books Borrowed:</th>
@@ -35,7 +57,7 @@
 
         </tbody>
     </table>
-    
+ 
 
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="index.js"></script>
