@@ -51,8 +51,9 @@ getDataRenderTable() //get operation
     function updateUser() {
       let id = $('#updateId').val()
     
-      $.ajax(`${URL_ENDPOINT}/${id}`, {
-        method: 'PUT',
+      $.ajax({
+        url: `${URL_ENDPOINT}/${id}`, 
+        type: 'PUT',
         data: {
           fullName: $('#updateName').val(),
           bookName: $('#updateBook').val(),
@@ -62,4 +63,16 @@ getDataRenderTable() //get operation
     
     $('#updateInfo').click(updateUser) //update data
 
-  
+    // function updateUser(existingID, updatedFullName, updatedBookName) {
+    //   var updatedFullName = document.getElementById('updateName')
+    //   var updatedBookName = document.getElementById('updateBook')
+    //   fetch(URL_ENDPOINT + "/" + existingID,{
+    //     method: 'PUT',
+    //     data: {
+    //       body: JSON.stringify({fullName: updatedFullName}),
+    //       ody: JSON.stringify({bookName: updatedBookName}),
+    //     }
+    //   })
+    // }
+    
+    // $('#updateInfo').click(updateUser) //update data
