@@ -48,31 +48,19 @@ getDataRenderTable() //get operation
     } //delete data
 
 
-    function updateUser() {
+    function updateUser(e) {
+      e.preventDefault()
       let id = $('#updateId').val()
     
       $.ajax({
         url: `${URL_ENDPOINT}/${id}`, 
         type: 'PUT',
-        data: {
+        contentType: 'application/json',
+        data: JSON.stringify({
           fullName: $('#updateName').val(),
           bookName: $('#updateBook').val(),
-        }
-      })
+        })
+      }).then(() => getDataRenderTable() )
     }
     
-    $('#updateInfo').click(updateUser) //update data
-
-    // function updateUser(existingID, updatedFullName, updatedBookName) {
-    //   var updatedFullName = document.getElementById('updateName')
-    //   var updatedBookName = document.getElementById('updateBook')
-    //   fetch(URL_ENDPOINT + "/" + existingID,{
-    //     method: 'PUT',
-    //     data: {
-    //       body: JSON.stringify({fullName: updatedFullName}),
-    //       ody: JSON.stringify({bookName: updatedBookName}),
-    //     }
-    //   })
-    // }
-    
-    // $('#updateInfo').click(updateUser) //update data
+    $('#updateInfo').click(updateUser) //update data when button was clicked
